@@ -15,8 +15,8 @@ db.compositions.find().pretty()
 db.compositions.drop( { 'desiredKey': 'desiredValue' })
 */
 
-router.get('/',/*compositionController.findComposition, */ (res, req) => {
-    composition.find({ title: "Blueprint" }, (err, res) => {console.log(res)})
+router.get('/', compositionController.findComposition, (res, req) => {
+    res.status(200).json(res.locals.searchResponse);
 });
 
 module.exports = router;

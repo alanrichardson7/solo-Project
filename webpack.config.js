@@ -20,7 +20,6 @@ module.exports = {
           test: /\.jsx?/,
           exclude: /node_modules/,
           use: {
-            // Mark did not wrap loader/options/presets in a use object here
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env', '@babel/preset-react'],
@@ -29,24 +28,42 @@ module.exports = {
         },
         {
           test: /\.s[ac]ss$/i,
-          use: [
-            // Compiles Sass to CSS
-            'style-loader',
-            'css-loader',
-            'sass-loader',
-          ],
+          exclude: /node_modules/,
+          use: ['style-loader', 'css-loader', 'sass-loader'],
         },
       ],
     },
+    // devServer: {
+    //   static: {
+    //     publicPath: '/build',
+    //     directory: path.resolve(__dirname, 'build'),
+    //   },
+    //   proxy: {
+    //     '/api': 'http://localhost:3000',
+    //   },
+    // },
+    // /* just coppied this out of unit 10
     devServer: {
-      static: {
-        publicPath: '/build',
-        directory: path.resolve(__dirname, 'build'),
-      },
+      host: 'localhost',
+      port: 8080,
+      contentBase: path.resolve(__dirname, 'dist'),
+      hot: true,
+      publicPath: '/',
+      historyApiFallback: true,
+      inline: true,
+      headers: { 'Access-Control-Allow-Origin': '*' },
       proxy: {
-        '/api': 'http://localhost:3000',
+        '/api/**': {
+          target: 'http://localhost:3000/',
+          secure: false,
+        },
+        '/assets/**': {
+          target: 'http://localhost:3000/',
+          secure: false,
+        },
       },
     },
+    // */
     performance: {
       hints: false,
     },
