@@ -1,15 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const compositionModel = new Schema({
-    title: { type: String, required: true },
-    composer: { type: String, required: true }
+const compositionSchema = new Schema({
+    title: { type: String, required: true, unique: true },
+    composer: { type: String, required: true },
+    duration: { type: Number, required: true },
+    violin: { type: Number },
+    viola: { type: Number },
+    cello: { type: Number },
+    bass: { type: Number },
+    piano: { type: Number },
+    marimba: { type: Number },
 })
 
+/* FYI - compositions.json is just for show. using actual database now!!! */
 
-/* Example composition object
-const newPiece = new Composition({ title: 'Shaker Loops', 
-    composer: 'John Adams', violin: 4, viola: 2, cello: 2,
-    bass: 1, duration: 32}) 
-}
-*/
+module.exports = mongoose.model('composition', compositionSchema);
