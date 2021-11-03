@@ -7,7 +7,7 @@ const composition = require('../db/compositionModel');
 in post request, can use composition.create( {} ) to create a new work */
 
 /* mongosh commands
-in one terminal, run - sudo mongod --dbpath ~/data/db
+in one terminal, run - sudo mongod --bind_ip 127.0.0.1 --dbpath ~/data/db
 in another terminal, run - mongosh
 in another terminal, run - npm start
 use compositionsDB
