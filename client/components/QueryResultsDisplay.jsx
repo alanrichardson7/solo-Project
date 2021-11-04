@@ -26,11 +26,7 @@ class QueryResultsDisplay extends Component {
         const results = [];
         /* need to somehow access the search results from query, iterate through them, and push a new component into results array for each
         object. will likely need to send results to this component as well as a child component that consists of a card showing search results */
-        /* perhaps will need to rethink entire structure. Might need to take db query out of express middleware and put it into
-        a React component. When results are received, could save them to state, and pass them as props to relevant components like 
-        QueryResultsDisplay and ResultCard */ 
-
-
+        
         return(
             <div>
                 {/* <h4>Search Results</h4> */}
