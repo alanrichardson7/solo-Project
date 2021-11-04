@@ -6,13 +6,17 @@ class MainDisplay extends Component {
     constructor(props) {
         super(props);
     }
-    //need to create a search field component that this component renders
+
+    componentDidMount(){
+        console.log('MainDisplay did mount')
+    }
+
     render() {
         return(
             <div id="mainDisplay">
                 <h1>SEARCHABLE COMPOSITION DATABASE</h1>
                 <SearchDisplay />
-                {/* <QueryResultsDisplay /> */}
+                <QueryResultsDisplay />
             </div>
         )
     }

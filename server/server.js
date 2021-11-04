@@ -1,6 +1,16 @@
 /* This file is where the server is hosted. It connects to the mongoose database, imports the express library, and hosts a server on port 3000.
 It also handles incoming get requests, sends the webpack bundle to the client, and forwards requests to the router. */
 
+/* mongosh commands
+in one terminal, run - sudo mongod --bind_ip 127.0.0.1 --dbpath ~/data/db
+in another terminal, run - mongosh
+in another terminal, run - npm start
+use compositionsDB
+db.compositions.find().pretty() 
+db.compositions.drop( { 'desiredKey': 'desiredValue' })
+*/
+
+
 const express = require('express');
 const path = require('path');
 const app = express();

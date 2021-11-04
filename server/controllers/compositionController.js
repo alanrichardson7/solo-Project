@@ -12,8 +12,6 @@ compositionController.findComposition = (req, res, next) => {
         query[instrument] = number;
         db.find(query)
             .then(data => {
-                // console.log('attempting to find compositions');
-                // console.log('data => ', data);
                 res.locals.result = data;
                 return next();
             })
