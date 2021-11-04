@@ -33,16 +33,16 @@ module.exports = {
         },
       ],
     },
-    // devServer: {
-    //   static: {
-    //     publicPath: '/build',
-    //     directory: path.resolve(__dirname, 'build'),
-    //   },
-    //   proxy: {
-    //     '/api': 'http://localhost:3000',
-    //   },
-    // },
-    // /* just coppied this out of unit 10
+    devServer: {
+      static: {
+        publicPath: '/build',
+        directory: path.resolve(__dirname, 'build'),
+      },
+      proxy: {
+        '/api': 'http://localhost:3000',
+      },
+    },
+    /* just coppied this out of unit 10
     devServer: {
       host: 'localhost',
       port: 8080,
@@ -63,7 +63,7 @@ module.exports = {
         },
       },
     },
-    // */
+    */
     performance: {
       hints: false,
     },

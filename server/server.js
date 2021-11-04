@@ -1,3 +1,6 @@
+/* This file is where the server is hosted. It connects to the mongoose database, imports the express library, and hosts a server on port 3000.
+It also handles incoming get requests, sends the webpack bundle to the client, and forwards requests to the router. */
+
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -18,16 +21,16 @@ app.get('/', (req, res) => {
 
 app.use('/', router);
 
-app.use((err, req, res, next) => {
-    const defaultErr = {
-      log: 'Express error handler caught unknown middleware error',
-      status: 500,
-      message: { err: 'An error occurred' },
-    };
-    const errorObj = Object.assign({}, defaultErr, err);
-    console.log(errorObj.log);
-    return res.status(errorObj.status).json(errorObj.message);
-  });
+// app.use((err, req, res, next) => {
+//     const defaultErr = {
+//       log: 'Express error handler caught unknown middleware error',
+//       status: 500,
+//       message: { err: 'An error occurred' },
+//     };
+//     const errorObj = Object.assign({}, defaultErr, err);
+//     console.log(errorObj.log);
+//     return res.status(errorObj.status).json(errorObj.message);
+//   });
   
 app.listen(PORT, () => {
     console.log(`Server listening on port: ${PORT}...`);

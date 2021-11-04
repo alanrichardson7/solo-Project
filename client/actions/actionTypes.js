@@ -1,1 +1,0 @@
-export const GET_COMPOSITION = 'GET_COMPOSITION';

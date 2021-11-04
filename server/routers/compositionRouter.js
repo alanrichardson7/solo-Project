@@ -1,7 +1,7 @@
 const express = require('express');
 const compositionController = require('../controllers/compositionController');
 const router = express.Router();
-const composition = require('../db/compositionModel');
+// const compositions = require('../db/compositionModel');
 
 /* in get requests, can use composition.find( { 'desiredKey': 'desiredValue' }) to find works.
 in post request, can use composition.create( {} ) to create a new work */
@@ -15,8 +15,9 @@ db.compositions.find().pretty()
 db.compositions.drop( { 'desiredKey': 'desiredValue' })
 */
 
-router.get('/', compositionController.findComposition, (res, req) => {
-    res.status(200).json(res.locals.searchResponse);
+router.get('/search', compositionController.findComposition, (req, res) => {
+    console.log('exited compositionController, reentered router')
+    res.status(200).send(res.locals.result);
 });
 
 module.exports = router;

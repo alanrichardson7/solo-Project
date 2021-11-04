@@ -1,0 +1,47 @@
+body {
+    background: $background;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#root{
+    text-align: center;
+}
+
+#mainContainer{
+
+}
+
+#mainDisplay{
+
+}
+
+#searchDisplay{
+}
+
+h1 {
+    color: $headline;
+    margin-top: 125px;
+    margin-bottom: 50px;
+}
+
+#searchInstructions{
+    color: $paragraph;
+    font-size: 20px;
+}
+
+#searchField{
+    width: 20%;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgb(36, 36, 36);
+}
+
+#button {
+    background-color: $button;
+    color: $buttonText;
+    font-weight: bold;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgb(36, 36, 36);
+}
