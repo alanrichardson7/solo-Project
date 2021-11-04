@@ -21,6 +21,9 @@ const PORT = 3000;
 mongoose.connect('mongodb://localhost:27017/compositionDB', (err, db) => {
 });
 
+app.use(express.json());
+app.use(express.urlencoded( {extended: true} ));
+
 app.use('/build', express.static(path.resolve(__dirname, "../build/")))
 
 app.get('/', (req, res) => {
